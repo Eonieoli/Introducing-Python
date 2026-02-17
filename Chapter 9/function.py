@@ -227,9 +227,125 @@
 # print(run_with_positional_args(sum_args, 1, 2, 3, 4))
 
 
-def outer(a, b):
-    def inner(c, d):
-        return c + d
-    return inner(a, b)
+# def outer(a, b):
+#     def inner(c, d):
+#         return c + d
+#     return inner(a, b)
 
-print(outer(4, 7))
+# print(outer(4, 7))
+
+
+# def knights(saying):
+#     def inner(quote):
+#         return "We are the knights who say: '%s'" % quote
+#     return inner(saying)
+
+# print(knights('Ni!'))
+
+
+# def knights2(saying):
+#     def inner2():
+#         return "We are the knights who say: '%s'" % saying
+#     return inner2
+
+# a = knights2('Duck')
+# b = knights2('Hasenpfeffer')
+# print(type(a))
+# print(type(b))
+
+# print(a)
+# print(b)
+
+# print(a())
+# print(b())
+
+
+# def edit_story(words, func):
+#     for word in words:
+#         print(func(word))
+
+# stairs = ['thud', 'meow', 'thud', 'hiss']
+
+# def enliven(word):  # 첫 글자를 대문자로 만들고 느낌표 붙이기
+#     return word.capitalize() + '!'
+
+# edit_story(stairs, enliven)
+
+# edit_story(stairs, lambda word: word.capitalize() + '!')
+
+
+# print(sum(range(1, 101)))
+
+
+# def my_range(first=0, last=10, step=1):
+#     number = first
+#     while number < last:
+#         yield number
+#         number += step
+
+# print(my_range)
+
+# ranger = my_range(1, 5)
+# print(ranger)
+
+# for x in ranger:
+#     print(x)
+
+# for try_again in ranger:
+#     print(try_again)
+
+
+# genobj = (pair for pair in zip(['a', 'b'], ['1', '2']))
+# print(genobj)
+# for thing in genobj:
+#     print(thing)
+
+
+# def document_it(func):
+#     def new_function(*args, **kwargs):
+#         print('Running function:', func.__name__)
+#         print('Positional arguments:', args)
+#         print('Keyword arguments:', kwargs)
+#         result = func(*args, **kwargs)
+#         print('Result:', result)
+#         return result
+#     return new_function
+
+
+# def add_ints(a, b):
+#     return a + b
+
+# print(add_ints(3, 5))
+
+# cooler_add_ints = document_it(add_ints) # 데커레이터 수동 할당
+# print(cooler_add_ints(3, 5))
+
+
+# @document_it
+# def add_ints(a, b):
+#     return a + b
+
+# add_ints(3, 5)
+
+
+# def square_it(func):
+#     def new_function(*args, **kwargs):
+#         result = func(*args, **kwargs)
+#         return result * result
+#     return new_function
+
+
+# @document_it
+# @square_it
+# def add_ints(a, b):
+#     return a + b
+
+# print(add_ints(3, 5))
+
+
+# @square_it
+# @document_it
+# def add_ints(a, b):
+#     return a + b
+
+# print(add_ints(3, 5))
