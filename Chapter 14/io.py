@@ -43,47 +43,84 @@
 #     print('relativity already exists! That was a close one.')
 
 
-fin = open('relativity', 'rt')
-poem = fin.read()
-fin.close()
-print(len(poem))
+# fin = open('relativity', 'rt')
+# poem = fin.read()
+# fin.close()
+# print(len(poem))
+
+
+# poem = ''
+# fin = open('relativity', 'rt')
+# chunk = 100
+# while True:
+#     fragment = fin.read(chunk)
+#     if not fragment:
+#         break
+#     poem += fragment
+# fin.close()
+# print(len(poem))
+
+
+# poem = ''
+# fin = open('relativity', 'rt')
+# while True:
+#     line = fin.readline()
+#     if not line:
+#         break
+#     poem += line
+# fin.close()
+# print(len(poem))
 
 
 poem = ''
-fin = open('relativity', 'rt')
-chunk = 100
-while True:
-    fragment = fin.read(chunk)
-    if not fragment:
-        break
-    poem += fragment
-fin.close()
-print(len(poem))
+# fin = open('relativity', 'rt')
+# for line in fin:
+#     poem += line
+# fin.close()
+# print(len(poem))
 
 
-poem = ''
-fin = open('relativity', 'rt')
-while True:
-    line = fin.readline()
-    if not line:
-        break
-    poem += line
-fin.close()
-print(len(poem))
+# fin = open('relativity', 'rt')
+# lines = fin.readlines()
+# fin.close()
+# print(len(lines), 'lines read')
+
+# for line in lines:
+#     print(line, end='')
 
 
-poem = ''
-fin = open('relativity', 'rt')
-for line in fin:
-    poem += line
-fin.close()
-print(len(poem))
+# bdata = bytes(range(0, 256))
+# print(len(bdata))
+
+# fout = open('bfile', 'wb')
+# fout.write(bdata)
+# fout.close()
+
+# fout = open('bfile', 'wb')
+# size = len(bdata)
+# offset = 0
+# chunk = 100
+# while True:
+#     if offset > size:
+#         break
+#     print(fout.write(bdata[offset:offset+chunk]))
+#     offset += chunk
+# fout.close()
+
+# fin = open('bfile', 'rb')
+# bdata = fin.read()
+# print(len(bdata))
+# fin.close()
 
 
-fin = open('relativity', 'rt')
-lines = fin.readlines()
-fin.close()
-print(len(lines), 'lines read')
+# with open('relativity', 'wt') as fout:
+#     fout.write(poem)
 
-for line in lines:
-    print(line, end='')
+fin = open('bfile', 'rb')
+print(fin.tell())
+
+print(fin.seek(255))
+
+bdata = fin.read()
+print(len(bdata))
+print(bdata[0])
